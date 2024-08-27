@@ -1,0 +1,21 @@
+@function pxToRem($pxValue) {
+  @return ($pxValue / 16) * 1rem;
+}
+
+@mixin font($fontSize, $fontWeight, $fontColor) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  color: $fontColor;
+}
+
+@mixin HSpaceBetweenFlex() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin CenterItemFlex() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
