@@ -1,0 +1,73 @@
+@import "../../../shared/styles/shared.module";
+@import "../../../shared/styles/variables.modules";
+
+.navbarMenu {
+  position: relative;
+  
+  .label {
+    @include font(pxToRem(16), 400, $gray);
+    display: flex;
+    align-items: center;
+
+    @include responsive_mb {
+      width: 100%;
+      justify-content: space-between;
+      color: $white;
+      padding: 16px 20px;
+
+      svg {
+        path {
+          fill: $white
+        }
+      }
+    }
+
+    svg {
+      margin-left: 5px;
+      width: pxToRem(11);
+    }
+  }
+
+  .items {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid $gray;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    z-index: 10000;
+
+    @include responsive_mb {
+      background-color: $green;
+      width: calc(100% - 40px);
+      margin: 0 20px;
+      border-radius: 0 0 5px 5px;
+      top: 100%;
+      box-shadow: 0px 2px 5px 0px #00000024;
+      border-color: $white;
+
+      > a {
+        width: 100%;
+        color: $white;
+      }
+      
+    }
+
+    > a {
+      padding: 10px;
+      padding-right: 30px;
+
+      &:not(:last-of-type) {
+        border-bottom: 1px solid $gray;
+
+        @include responsive_mb {
+          border-bottom-color: $white;
+        }
+      }
+    }
+  }
+}

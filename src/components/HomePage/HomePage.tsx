@@ -1,5 +1,5 @@
 import React from "react";
-import InfoBar from "../InfoBar/InfoBar";
+import InfoBar from "../NavBar/NavBar";
 
 const HomePage = () => {
   return <>

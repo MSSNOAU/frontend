@@ -1,0 +1,196 @@
+@import "../../shared/styles/shared.module";
+@import "../../shared/styles/variables.modules";
+
+$max-width: pxToRem(1500);
+
+.dsk {
+  @include responsive_mb {
+    display: none;
+  }
+}
+.mob {
+  display: none;
+
+  @include responsive_mb {
+    display: block;
+  }
+}
+
+.dsk {
+  .contactInfo {
+    height: pxToRem(46);
+    background-color: $green;
+    
+    .innerC {
+      @include HSpaceBetweenFlex;
+      padding: 0 100px;
+      height: 100%;
+      max-width: $max-width;
+      margin: 0 auto;
+  
+  
+      @media (max-width: 1120px) {
+        padding: 0 15px;
+      }
+    }
+  
+    .l, .r {
+      @include CenterItemFlex;
+    }
+  
+    .contact {
+      display: flex;
+      justify-content: flex-start;
+  
+      &:not(:last-of-type) {
+        margin-right: 20px;
+      }
+  
+      p {
+        margin-left: 10px;
+        @include font(pxToRem(14), 700, $white);
+      }
+  
+      svg {
+        &:not(:first-of-type) {
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+  
+  .navItems {
+    padding: 40px 100px;
+    margin: 0 auto;
+    max-width: $max-width;
+    @include HSpaceBetweenFlex;
+    gap: 10px;
+  
+    @media (max-width: 1120px) {
+      padding: 40px 15px;
+    }
+  
+    .logoContainer {
+      position: relative;
+      height: pxToRem(53);
+      width: pxToRem(285);
+  
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  
+    .menus {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+  
+      @media (max-width: 950px) {
+        gap: 10px;
+      }
+    }
+  }
+}
+
+.mob {
+  width: 100%;
+  height: pxToRem(54);
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0px 2px 5px 0px #00000024;
+
+  .barContainer {
+    height: 100%;
+    @include HSpaceBetweenFlex;
+    padding: 0 20px;
+
+    .logoContainer {
+      position: relative;
+      height: pxToRem(26);
+      width: pxToRem(139);
+  
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    > button {
+      padding-left: 10px;
+    }
+  }
+
+  .mobNav {
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    max-height: pxToRem(812);
+    background-color: $green;
+    @include VerticalScrollBar;
+    overflow-y: scroll;
+    
+    .header {
+      padding:  20px 20px 0 20px;
+      @include HSpaceBetweenFlex;
+      
+      .logoContainer {
+        padding: 7px 10px;
+        border-radius: 4px;
+        background-color: $white;
+        height: pxToRem(34.78);
+        width: pxToRem(135.7);
+        position: relative;
+
+        img {
+          width: pxToRem(116.88);
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      > button {
+        width: pxToRem(30);
+        height: pxToRem(30);
+        @include CenterItemFlex;
+        justify-content: flex-end;
+      }
+    }
+
+    .menus {
+      margin-top: 40px;
+    }
+
+    .contactInfo {
+      margin: 16px 20px;
+      padding: 32px 24px;
+      border-top: 1px solid $white;
+
+      .contact {
+        display: flex;
+        justify-content: center;
+    
+        &:not(:last-of-type) {
+          margin-bottom: 16px;
+        }
+    
+        p {
+          margin-left: 8px;
+          @include font(pxToRem(12), 700, $white);
+        }
+    
+        svg {
+          &:not(:first-of-type) {
+            margin-left: 4px;
+          }
+        }
+      }
+    }
+  }
+}

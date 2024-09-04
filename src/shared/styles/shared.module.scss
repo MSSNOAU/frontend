@@ -1,3 +1,5 @@
+@import "./variables.modules";
+
 @function pxToRem($pxValue) {
   @return ($pxValue / 16) * 1rem;
 }
@@ -18,4 +20,38 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin responsive_mb {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+// @mixin responsive_lg {
+//   @media (min-width: 600px) {
+//     @content;
+//   }
+// }
+
+@mixin VerticalScrollBar {
+  &::-webkit-scrollbar {
+    width: 5px;
+    // margin-left: -5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $white;
+    visibility: hidden;
+  }
+
+  &:active::-webkit-scrollbar-thumb,
+  &:focus::-webkit-scrollbar-thumb,
+  &:hover::-webkit-scrollbar-thumb {
+      visibility: visible;
+  }
 }
