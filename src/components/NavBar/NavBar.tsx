@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from 'next/image';
-import styles from './NavBar.module.scss';
+import { CONTACT_DETAILS, SOCIAL_LINKS } from "@/src/shared/constants";
 import CallIcon from "@/public/icons/svgs/phone.svg"
 import WhatsappIcon from "@/public/icons/svgs/whatsapp.svg"
 import XIcon from "@/public/icons/svgs/x.svg"
@@ -13,6 +13,7 @@ import HamburgerIcon from "@/public/icons/svgs/hamburger.svg"
 import CloseIcon from "@/public/icons/svgs/close-t1.svg"
 import Logo from "@/public/icons/images/logo-txt.png";
 import NavBarMenu from "./NavBarMenu/NavBarMenu";
+import styles from './NavBar.module.scss';
 
 {/* Some infos here should eventually be fetched from the backend */}
 const NavBar = () => {
@@ -28,23 +29,23 @@ const NavBar = () => {
               <span className={styles.contact}>
                 <CallIcon height={17} />
                 <WhatsappIcon height={17} />
-                <p>+234-903-953-9042 / +234-678-322-3576</p>
+                <p>{CONTACT_DETAILS.ameerPhone} / {CONTACT_DETAILS.ameerahPhone}</p>
               </span>
             </div>
 
             <div className={styles.r}>
               <span className={styles.contact}>
                 <XIcon height={17} />
-                <p>@mssngreatife1</p>
+                <p>{SOCIAL_LINKS.x.name}</p>
               </span>
               <span className={styles.contact}>
                 <FacebookIcon height={17} />
                 <InstagramIcon height={17} />
-                <p>@MSSN_OAU</p>
+                <p>{SOCIAL_LINKS.facebook.name}</p>
               </span>
               <span className={styles.contact}>
                 <MailIcon height={17} />
-                <p>mssnthenewgreatife@gmail.com</p>
+                <p>{CONTACT_DETAILS.email}</p>
               </span>
             </div>
           </div>
@@ -160,21 +161,21 @@ const NavBar = () => {
               <span className={styles.contact}>
                 <CallIcon height={13} />
                 <WhatsappIcon height={13} />
-                <p>+234-903-953-9042 / +234-678-322-3576</p>
+                <p>{CONTACT_DETAILS.ameerPhone} / {CONTACT_DETAILS.ameerahPhone}</p>
               </span>
 
               <span className={styles.contact}>
                 <XIcon height={13} />
-                <p>@mssngreatife1</p>
+                <p>{SOCIAL_LINKS.x.name}</p>
               </span>
               <span className={styles.contact}>
                 <FacebookIcon height={13} />
                 <InstagramIcon height={13} />
-                <p>@MSSN_OAU</p>
+                <p>{SOCIAL_LINKS.facebook.name}</p>
               </span>
               <span className={styles.contact}>
                 <MailIcon height={13} />
-                <p>mssnthenewgreatife@gmail.com</p>
+                <p>{CONTACT_DETAILS.email}</p>
               </span>
             </div>
           </div>

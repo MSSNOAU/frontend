@@ -1,0 +1,112 @@
+@import "../../shared/styles/shared.module";
+@import "../../shared/styles/variables.modules";
+
+$max-width: pxToRem(1500);
+
+
+.footer {
+  background-color: $green;
+
+  p, a {
+    @include font(pxToRem(18), 400, $white);
+    line-height: 31px;
+  }
+
+  .top {
+    padding: 80px 100px 30px 100px;
+    max-width: $max-width;
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    @include responsive_mb {
+      display: block;
+      padding: 80px 20px 30px 20px;
+    }
+
+    .about {
+      .logoContainer {
+        border-radius: 10px;
+        background-color: $white;
+        height: pxToRem(84.99);
+        width: pxToRem(331);
+        position: relative;
+        @include CenterItemFlex;
+
+        img {
+          object-fit: contain;
+        }
+      }
+
+      > p {
+        margin: 24px 0 32px 0;
+        max-width: pxToRem(500);
+
+        @include responsive_mb {
+          max-width: none;
+        }
+      }
+
+      .socials {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        @include responsive_mb {
+          margin-bottom: 30px;
+        }
+
+        a {
+          width: pxToRem(42);
+          height: pxToRem(42);
+          border-radius: 100000px;
+          border: 1px solid $white;
+          display: block;
+          @include CenterItemFlex;
+  
+          &:not(:last-of-type) {
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+
+    .shortcut, .contact {
+      h3 {
+        @include font(pxToRem(24), 800, $white);
+        margin-bottom: 24px;
+      }
+
+      p, a {
+        display: block;
+
+        &:not(:last-of-type) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    .shortcut {
+      @include responsive_mb {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  
+  hr {
+    border: 0;
+    border-bottom: 1px solid rgba($white, 0.2);
+  }
+
+  .b {
+    max-width: $max-width;
+    padding: 63px 100px 40px 100px;
+    margin: 0 auto; 
+
+    @include responsive_mb {
+      display: block;
+      padding: 20px;
+    }
+  }
+}
