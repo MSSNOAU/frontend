@@ -1,0 +1,11 @@
+@import "../../shared/styles/shared.module";
+@import "../../shared/styles/variables.modules";
+
+.navPadding {
+  width: 100%;
+  height: pxToRem(179);
+  
+  @include responsive_mb {
+    height: pxToRem(54);    
+  }
+}

@@ -1,0 +1,95 @@
+@import "../../../../shared/styles/variables.modules.scss";
+@import "../../../../shared/styles/shared.module.scss";
+
+.newsCard {
+  border-radius: 10px;
+  width: pxToRem(385);
+  overflow: hidden;
+  border: 1px solid rgba($gray, 0.15);
+  background-color: $white;
+
+  .image {
+    height: pxToRem(290);
+    width: 100%;
+    position: relative;
+    // box-shadow: 0px 3px 5px 0px #00000026;
+
+    .tag {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      padding: 6px 20px;
+      border-radius: 31px;
+      z-index: 100;
+      background-color: $green;
+
+      p {
+        @include font(pxToRem(12), 700, $white);
+      }
+    }
+  }
+
+  .b {
+    padding: 16px 16px 24px 16px;
+
+    h4 {
+      @include font(pxToRem(20), 800, $gray);
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    p.content {
+      @include font(pxToRem(16), 400, $gray);
+      line-height: 24px;
+      margin: 12px 0;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .cta {
+      @include HSpaceBetweenFlex;
+
+      .author {
+        @include HSpaceBetweenFlex;
+        justify-content: flex-start;
+
+        .userIcon {
+          width: pxToRem(40);
+          height: pxToRem(40);
+          border-radius: 10000px;
+
+          border: 1px solid rgba($gray, 0.15);
+          margin-right: 10px;
+          background-color: $teal;
+          @include font(pxToRem(14), 700, $white);
+          @include CenterItemFlex;
+        }
+
+        > div {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        .name {
+          @include font(pxToRem(14), 700, $gray);
+          line-height: 15px;
+        }
+        
+        .readTime {
+          @include font(pxToRem(12), 400, $gray);
+          line-height: 15px;
+        }
+      }
+      
+    }
+  }
+}

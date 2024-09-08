@@ -1,0 +1,56 @@
+@import "../../../shared/styles/shared.module.scss";
+@import "../../../shared/styles/variables.modules.scss";
+
+.prayerTimeContainer {
+  padding: 60px 20px;
+  background-image: linear-gradient(to right, $green, rgba($green, 0.7)), url('../../../../public/images/landing/prayer_times_bg.png');
+  background-size: cover;
+
+  .inner {
+    max-width: pxToRem(1100);
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .hall {
+      background-color: $black;
+      border-radius: 5px;
+
+      p {
+        @include font(pxToRem(14), 800, $white);
+        padding: 13px 20px;
+      }
+    }
+
+    h2 {
+      color: $white;
+      margin: 16px 0 70px 0;
+      max-width: pxToRem(580);
+    }
+
+    .times {
+      @include CenterItemFlex;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+
+      p {
+        @include font(pxToRem(20), 800, $white);
+        text-transform: uppercase;
+      }
+
+      div {
+        height: pxToRem(28);
+        width: 4px;
+        background-color: $yellow;
+        border-radius: 10px;
+        margin: 0 28px;
+
+        &:last-of-type {
+          display: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@import "../../../shared/styles/variables.modules.scss";
+@import "../../../shared/styles/shared.module.scss";
+
+.button {
+  border-radius: 8px;
+  background-color: $green;
+  padding: 0 49px;
+  height: pxToRem(60);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include font(pxToRem(16), 700, $white);
+  border: none;
+
+  &.fullWidth {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  &.sm {
+    // height: pxToRem(39);
+    // padding: 0 30px;
+    // border-radius: 10px;
+    // font-size: pxToRem(14);
+
+    // &.fullWidth {
+    //   padding: 0 10px;
+    // }
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.4;
+  }
+  
+  &.button_FILL_WHITE {
+    background-color: $white;
+    color: $green;
+  }
+  
+  &.button_FILL_YELLOW {
+    background-color: $yellow;
+  }
+  
+  &.button_FILL_NONE_TEXT {
+    background-color: transparent;
+    padding: 0 0;
+    color: $green;
+    height: fit-content;
+  }
+
+  .iconL, .iconR {
+    display: flex;
+    @include CenterItemFlex;
+  }
+  .iconL {
+    margin-right: 5px;
+  }
+  
+  .iconR {
+    margin-left: 5px;
+  }
+}
