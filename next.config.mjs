@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true, // Added for netlify deploy
+
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>
@@ -23,7 +25,7 @@ const nextConfig = {
             loader: "@svgr/webpack",
             options: {
               dimensions: false,
-            },
+            },you
           },
         ],
       }
