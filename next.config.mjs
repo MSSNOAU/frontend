@@ -25,7 +25,7 @@ const nextConfig = {
             loader: "@svgr/webpack",
             options: {
               dimensions: false,
-            },you
+            },
           },
         ],
       }
