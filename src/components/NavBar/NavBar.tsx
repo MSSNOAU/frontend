@@ -61,12 +61,13 @@ const NavBar = () => {
           <div className={styles.menus}>
             <NavBarMenu
               variant="dropdown"
-              items={["Page", "New"]}
+              items={["About MSSN OAU", "MSSN OAU Excos", "Staff Advisers"]}
               label="About Us"
             />
             <NavBarMenu
-              variant="dropdown"
-              items={["Page", "New"]}
+              variant="normal"
+              href=""
+              // items={["Page", "New"]}
               label="Programs"
             />
             <NavBarMenu

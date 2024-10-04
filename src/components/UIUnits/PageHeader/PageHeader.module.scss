@@ -1,0 +1,15 @@
+@import "../../../shared/styles/shared.module.scss";
+@import "../../../shared/styles/variables.modules.scss";
+
+
+.pageHeader {
+  background-image: linear-gradient(to right, $green, rgba($green, 0.6)), url('../../../../public/images/background/bck_1.png');
+  background-size: cover;
+  padding: 60px 20px;
+  height: pxToRem(521);
+  @include CenterItemFlex;
+
+  h1 {
+    @include font(pxToRem(56), 800, $white);
+  }
+}
