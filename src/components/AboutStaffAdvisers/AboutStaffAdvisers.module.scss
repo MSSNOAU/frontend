@@ -1,0 +1,68 @@
+@import "../../shared/styles/shared.module.scss";
+@import "../../shared/styles/variables.modules.scss";
+
+.content {
+  padding: 100px 50px;
+  
+  @include responsive_mb {
+    padding: 50px 10px;
+  }
+
+  h2 {
+    @include font(pxToRem(40), 800, $gray);
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  .adviser {
+    padding: 32px;
+    border-radius: 10px;
+    border: 1px solid rgba($gray, 0.1);
+    max-width: pxToRem(1240);
+    margin: 0 auto;
+
+    &:not(:last-of-type) {
+      margin-bottom: 37px;
+    }
+
+    .top {
+      margin-bottom: 32px;
+      @include HSpaceBetweenFlex;
+      gap: 10px;
+
+
+      @include responsive_mb {
+        display: block;
+      }
+
+      .dets {
+        h3 {
+          @include font(pxToRem(32), 800, $green);
+          margin-bottom: 12px;
+        }
+
+        h4 {
+          @include font(pxToRem(24), 700, $gray);
+        }
+      }
+
+      .contact {
+        @include CenterItemFlex;
+        justify-content: flex-start;
+        gap: 20px;
+
+        @include responsive_mb {
+          margin-top: 10px
+        }
+
+        button {
+          @include CenterItemFlex;
+        }
+      }
+    }
+
+    p {
+      @include font(pxToRem(18), 400, $gray);
+    }
+  }
+}
