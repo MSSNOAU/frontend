@@ -2,7 +2,11 @@
 @import "../../shared/styles/variables.modules.scss";
 
 .content {
-  padding: 100px;
+  padding: 100px 50px;
+  
+  @include responsive_mb {
+    padding: 50px 10px;
+  }
 
   h2 {
     @include font(pxToRem(40), 800, $gray);
@@ -14,6 +18,8 @@
     padding: 32px;
     border-radius: 10px;
     border: 1px solid rgba($gray, 0.1);
+    max-width: pxToRem(1240);
+    margin: 0 auto;
 
     &:not(:last-of-type) {
       margin-bottom: 37px;
@@ -22,7 +28,12 @@
     .top {
       margin-bottom: 32px;
       @include HSpaceBetweenFlex;
-      // gap: 10px;
+      gap: 10px;
+
+
+      @include responsive_mb {
+        display: block;
+      }
 
       .dets {
         h3 {
@@ -36,8 +47,13 @@
       }
 
       .contact {
-        @include HSpaceBetweenFlex;
+        @include CenterItemFlex;
+        justify-content: flex-start;
         gap: 20px;
+
+        @include responsive_mb {
+          margin-top: 10px
+        }
 
         button {
           @include CenterItemFlex;
