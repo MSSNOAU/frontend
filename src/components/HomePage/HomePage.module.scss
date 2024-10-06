@@ -72,6 +72,11 @@ $containerHPadding: 20px;
   .desc {
     margin: 12px 0 24px 0;
     @include HSpaceBetweenFlex;
+    @include responsive_mb  {
+      gap: 20px;
+      flex-direction: column;
+      align-items: start;
+    }
 
     .l {
       max-width: pxToRem(800);
@@ -119,6 +124,9 @@ $containerHPadding: 20px;
     background-color: $white;
     margin: 0 auto;
     
+    @include responsive_mb {
+      padding: $containerHPadding ;
+    }  
 
     h2 {
       margin: 12px 0 24px 0;
@@ -168,6 +176,11 @@ $containerHPadding: 20px;
   }
 
   .desc {
+    @include responsive_mb  {
+      gap: 20px;
+      flex-direction: column;
+      align-items: start;
+    }
     margin: 12px 0 24px 0;
     @include HSpaceBetweenFlex;
 
@@ -307,6 +320,7 @@ $containerHPadding: 20px;
   
   @include responsive_mb {
     display: block;
+    padding: $containerHPadding;
   }
   
   .about {
@@ -384,6 +398,9 @@ $containerHPadding: 20px;
     background-color: rgba($green, 0.08);
     @include HSpaceBetweenFlex;
     gap: 50px;
+    @include responsive_mb {
+      padding: $containerHPadding ;
+    }  
 
     > div {
       flex: 1;
