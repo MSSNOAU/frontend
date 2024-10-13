@@ -1,0 +1,21 @@
+@import "../../shared/styles/shared.module";
+
+.page_hero {
+  background: linear-gradient(to right, #008001, #008001ab),
+    url("/images/background/page_hero_bg.png") no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: pxToRem(521);
+  // background-color: burlywood;
+  // background-blend-mode: lighten;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    @include font(pxToRem(56), 800, $white);
+    line-height: pxToRem(70);
+    text-align: center;
+  }
+}

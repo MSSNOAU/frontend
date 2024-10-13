@@ -8,7 +8,7 @@ type Props = {
   variant?: ButtonVariants,
   icon?: React.JSX.Element,
   iconPos?: 'LEFT' | 'RIGHT'
-  onClick: () => void;
+  onClick?: () => void;
   disabled?: boolean;
   size?: 'sm' | 'lg';
   fullWidth?: boolean;
