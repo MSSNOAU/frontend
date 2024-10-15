@@ -17,6 +17,16 @@ interface NormalInputProps {
   options?: OptionType[];
 }
 
+interface TextAreaInputProps {
+  type: "TEXTAREA";
+  onChange: (val: string) => void;
+  title: string;
+  showLabel?: boolean;
+  value: string;
+  placeholder: string;
+  options?: OptionType[];
+}
+
 interface DropdownInputProps {
   type: "DROPDOWN";
   onChange: (val: OptionType) => void;
@@ -27,7 +37,7 @@ interface DropdownInputProps {
   placeholder: string;
 }
 
-type Props = NormalInputProps | DropdownInputProps;
+type Props = NormalInputProps | DropdownInputProps | TextAreaInputProps;
 
 const Input: React.FC<Props> = ({
   title,
@@ -102,7 +112,23 @@ const Input: React.FC<Props> = ({
           );
         }
         break;
-
+      case 'TEXTAREA':
+        // Improve later
+        inputEl = (
+          <div className={styles.textarea}>
+            {showLabel && <label htmlFor={title}>{title}</label>}
+            <textarea
+              style={{ width: "100%" }}
+              name={title}
+              id={title}
+              cols={30}
+              rows={10}
+              placeholder={placeholder}
+              value={value}
+              onChange={(e) => onChange(e.target.value)}
+            />
+          </div>
+        );
       default:
         break;
     }

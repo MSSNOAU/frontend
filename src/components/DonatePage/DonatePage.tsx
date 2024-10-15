@@ -43,6 +43,7 @@ const DonatePage = () => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  
   const subscribeHandler = () => {
     console.log(fullName, email, message);
   };
@@ -156,18 +157,13 @@ const DonatePage = () => {
                 onChange={(val) => setPhone(val)}
                 placeholder="Please enter your phone number"
               />
-              <div>
-                <textarea
-                  style={{ width: "100%" }}
-                  name="message"
-                  id="message"
-                  cols={30}
-                  rows={10}
-                  placeholder="Message(optional)"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                ></textarea>
-              </div>
+              <Input
+                title="Message"
+                value={phone}
+                type="TEXTAREA"
+                onChange={(val) => setMessage(val)}
+                placeholder="Message(optional)"
+              />
               <Button
                 label="Send Message"
                 variant="FILL_YELLOW"
