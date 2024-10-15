@@ -1,0 +1,214 @@
+@import "../../shared/styles/shared.module.scss";
+@import "../../shared/styles/variables.modules.scss";
+
+$containerHPadding: 20px;
+
+.intro {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 47px $containerHPadding;
+  gap: 20px;
+
+  .introTitle {
+    font-size: pxToRem(40);
+    font-weight: 800;
+    line-height: pxToRem(50);
+    margin-top: 12px;
+    margin-bottom: 24px;
+    max-width: 800px;
+  }
+
+  p {
+    font-size: pxToRem(18);
+    font-weight: 400;
+    line-height: 31px;
+    max-width: 1000px;
+    padding-inline: auto;
+  }
+
+  .quote {
+    color: $green;
+  }
+}
+
+.sectionOne {
+  background-color: $green-1;
+  padding-block: 47px;
+
+  .container {
+    padding: 47px $containerHPadding;
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+  .sectionOneTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      text-align: center;
+      font-size: pxToRem(40);
+      font-weight: 800;
+      line-height: pxToRem(50);
+      margin-top: 12px;
+      margin-bottom: 24px;
+    }
+    p {
+      font-size: pxToRem(18);
+      font-weight: 400;
+      line-height: 31px;
+      padding-inline: auto;
+      text-align: center;
+    }
+  }
+
+  .sectionOneContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 47px $containerHPadding;
+
+    @include responsive_mb {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .donationReasons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+
+      .reason {
+        list-style: inside;
+        color: $green;
+
+        @include responsive_mb {
+          list-style: none;
+        }
+
+        font-size: pxToRem(18);
+        font-weight: 400;
+        line-height: 31px;
+        max-width: 1000px;
+        padding-inline: auto;
+
+        span {
+          color: $black;
+        }
+      }
+    }
+
+    .accountDetails {
+      background-color: $gray;
+      color: white;
+      border-radius: 10px;
+      padding: $containerHPadding;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      font-size: pxToRem(24);
+
+      h3 {
+        font-weight: 800;
+        line-height: pxToRem(31);
+        background-color: white;
+        color: $gray;
+        padding: 10px;
+        border-radius: 8px;
+      }
+      p {
+        text-align: center;
+      }
+    }
+  }
+  .annualDue {
+    p {
+      font-weight: 800;
+      font-size: pxToRem(24);
+    }
+
+    a {
+      color: $green;
+    }
+  }
+}
+
+.sectionTwo {
+  padding-block: 47px;
+
+  .container {
+    background-image: url("../../../public/images/donate/texture.png");
+    background-color: $green;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding: 50px;
+    // make a 2 column grid layout
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+
+    @include responsive_mb {
+      grid-template-columns: 1fr;
+      align-items: stretch;
+    }
+
+    .sectionTwoTitle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: $white;
+
+      h3 {
+        font-size: pxToRem(40);
+        font-weight: 800;
+        line-height: pxToRem(50);
+        margin-top: 12px;
+        margin-bottom: 24px;
+      }
+      p {
+        font-size: pxToRem(18);
+        font-weight: 400;
+        line-height: 31px;
+        padding-inline: auto;
+      }
+    }
+
+    .sectionTwoContent {
+      width: 100%;
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        input {
+          width: 100%;
+        }
+        textarea {
+          padding: 24px;
+          height: pxToRem(60);
+          border: none;
+          height: 150px;
+          border-radius: 5px;
+
+          ::placeholder {
+            @include font(pxToRem(18), 400, $gray);
+            margin-top: 10px;
+          }
+        }
+        button {
+          max-width: fit-content;
+        }
+      }
+    }
+  }
+}
