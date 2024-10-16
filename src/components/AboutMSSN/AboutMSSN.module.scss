@@ -1,0 +1,189 @@
+@import "../../shared/styles/shared.module.scss";
+@import "../../shared/styles/variables.modules.scss";
+
+.brief {
+  padding: 100px 122px;
+  padding-bottom: 182px;
+  max-width: pxToRem(1197);
+  margin: 0 auto;
+  text-align: center;
+
+  @include responsive_mb {
+    padding: 50px 60px;
+  }
+  
+  h2 {
+    @include font(pxToRem(40), 800, $gray);
+    margin-bottom: 24px;
+  }
+
+  p {
+    @include font(pxToRem(18), 400, $gray);
+
+    &:last-of-type {
+      margin-top: 20px;
+    }
+  } 
+}
+
+.chart {
+  max-width: pxToRem(1240);
+  padding: 0 15px;
+  margin: 0 auto;
+  margin-bottom: 120px;
+
+  
+  @include responsive_mb {
+    margin-bottom: 60px;
+  }
+
+  .logoContainer {
+    width: pxToRem(270.52);
+    height: pxToRem(123.33);
+    border-radius: 16px;
+    border: 1px solid rgba($green, 0.15);
+    @include CenterItemFlex;
+  }
+  
+  .diagram {
+    height: pxToRem(235);
+    @include CenterItemFlex;
+    position: relative;
+    
+    @include responsive_mb {
+      display: none;
+    }
+    
+    .logoContainer {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .r {
+      transform: rotateY(180deg);
+    }
+
+    .logoSpace {
+      width: pxToRem(270.52);
+    }
+  }
+
+  .txt {
+    @include HSpaceBetweenFlex;
+    column-gap: 15px;
+    align-items: flex-start;
+    margin-top: 20px;
+
+    @include responsive_mb {
+      display: block;
+    }
+
+    .logoContainer {
+      margin: 15px auto;
+      display: none;
+
+      @include responsive_mb {
+        display: block;
+      }
+    }
+
+    div {
+      text-align: center;
+      max-width: pxToRem(523);
+
+      @include responsive_mb {
+        max-width: none;
+      }
+    }
+
+    h3 {
+      @include font(pxToRem(32), 800, $green);
+      margin-bottom: 24px;
+    }
+    
+    p {
+      @include font(pxToRem(18), 400, $gray);
+    }
+  }
+}
+
+.comittees {
+  margin-bottom: 60px;
+  padding: 0 15px;
+
+  > h2, > p {
+    text-align: center
+  }
+  
+  > h2 {
+    @include font(pxToRem(40), 800, $gray);
+    margin-bottom: 24px;
+  }
+
+  > p {
+    @include font(pxToRem(18), 400, $gray);
+    max-width: pxToRem(1045);
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+}
+
+.committee {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  column-gap: 50px;
+  max-width: pxToRem(1240);
+  margin: 0 auto;
+  padding: 60px 0;
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid rgba($gray, 0.1);
+  }
+
+  @include responsive_mb {
+    display: block;
+  }
+
+  .image {
+    width: pxToRem(350);
+    height: pxToRem(350);
+
+    @include responsive_mb {
+      margin: 0 auto;
+      margin-bottom: 15px;
+    }
+  }
+
+  .txt {
+    text-align: left;
+
+    @include responsive_mb {
+      text-align: center;
+    }
+
+    h3 {
+      @include font(pxToRem(32), 800, $green);
+      margin-bottom: 24px;
+    }
+
+    p {
+      @include font(pxToRem(18), 400, $gray);
+    }
+
+    p:last-of-type {
+      font-weight: 700;
+      margin-top: 24px;
+
+      a {
+        color: $green;
+      }
+    }
+  }
+}
