@@ -103,7 +103,7 @@ const AboutExcos: React.FC<PageProps> = ({ isCurrentYear, session }) => {
     <>
       <PageHeader title={`MSSN OAU Excos${!isCurrentYear ? " " + sessionFmt : ""}`} />
       <div className={styles.content}>
-        <h2>Meet The New Executives For {sessionFmt} Academic Session</h2>
+        <h2>Meet The {isCurrentYear ? "New" : ""} Executives For {sessionFmt} Academic Session</h2>
         
         <div className={styles.container}>
           <ExcosGroup
