@@ -10,13 +10,19 @@ interface CommonMenuProps {
 interface NormalMenuProps extends CommonMenuProps {
   variant: 'normal';
   href: string;
-  items?: string[]
+  items?: {
+    title: string;
+    link: string;
+  }[]
 }
 
 interface DropdownMenuProps extends CommonMenuProps {
   variant: 'dropdown';
   href?: string;
-  items: string[]
+  items: {
+    title: string;
+    link: string;
+  }[]
 }
 
 type PropsType = NormalMenuProps | DropdownMenuProps;
@@ -37,7 +43,7 @@ const NavBarMenu: React.FC<PropsType> = ({ variant, items, href, label }) => {
           {isDropdownOpen && (
             <div className={styles.items}>
               {items.map((i) => (
-                <Link key={i} href={i}>{i}</Link>
+                <Link key={i.title} href={i.link}>{i.title}</Link>
               ))}
             </div>
           )}

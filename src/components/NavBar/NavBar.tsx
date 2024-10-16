@@ -14,6 +14,7 @@ import CloseIcon from "@/public/icons/svgs/close-t1.svg"
 import Logo from "@/public/icons/images/logo-txt.png";
 import NavBarMenu from "./NavBarMenu/NavBarMenu";
 import styles from './NavBar.module.scss';
+import Link from "next/link";
 
 {/* Some infos here should eventually be fetched from the backend */}
 const NavBar = () => {
@@ -51,43 +52,56 @@ const NavBar = () => {
           </div>
         </div>
         <div className={styles.navItems}>
-          <div className={styles.logoContainer}>
+          <Link href="/" className={styles.logoContainer}>
             <Image
               src={Logo}
               alt="MSSNOAU logo"
               fill
             />
-          </div>
+          </Link>
           <div className={styles.menus}>
             <NavBarMenu
               variant="dropdown"
-              items={["About MSSN OAU", "MSSN OAU Excos", "Staff Advisers"]}
+              items={[
+                {
+                  title: "About MSSN OAU",
+                  link: "/about"
+                },
+                {
+                  title: "MSSN OAU Excos",
+                  link: "/about/excos"
+                },
+                {
+                  title: "Staff Advisers",
+                  link: "/about/staff-advisers"
+                }
+              ]}
               label="About Us"
             />
             <NavBarMenu
               variant="normal"
-              href=""
+              href="/programs"
               // items={["Page", "New"]}
               label="Programs"
             />
             <NavBarMenu
               variant="normal"
-              href="/"
+              href="/press"
               label="An-Nur Press"
             />
             <NavBarMenu
               variant="normal"
-              href="/"
+              href="/projects"
               label="Projects"
             />
             <NavBarMenu
               variant="normal"
-              href="/"
+              href="/events"
               label="Events"
             />
             <NavBarMenu
               variant="normal"
-              href="/"
+              href="/donate"
               label="Donate"
             />
           </div>
@@ -128,32 +142,45 @@ const NavBar = () => {
             <div className={styles.menus}>
               <NavBarMenu
                 variant="dropdown"
-                items={["Page", "New"]}
+                items={[
+                  {
+                    title: "About MSSN OAU",
+                    link: "/about"
+                  },
+                  {
+                    title: "MSSN OAU Excos",
+                    link: "/about/excos"
+                  },
+                  {
+                    title: "Staff Advisers",
+                    link: "/about/staff-advisers"
+                  }
+                ]}
                 label="About Us"
               />
               <NavBarMenu
-                variant="dropdown"
-                items={["Page", "New"]}
+                variant="normal"
+                href="/programs"
                 label="Programs"
               />
               <NavBarMenu
                 variant="normal"
-                href="/"
+                href="/press"
                 label="An-Nur Press"
               />
               <NavBarMenu
                 variant="normal"
-                href="/"
+                href="/projects"
                 label="Projects"
               />
               <NavBarMenu
                 variant="normal"
-                href="/"
+                href="/events"
                 label="Events"
               />
               <NavBarMenu
                 variant="normal"
-                href="/"
+                href="/donate"
                 label="Donate"
               />
             </div>
