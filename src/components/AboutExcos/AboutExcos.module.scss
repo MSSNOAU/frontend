@@ -1,0 +1,77 @@
+@import "../../shared/styles/shared.module.scss";
+@import "../../shared/styles/variables.modules.scss";
+
+.content {
+  padding: 100px 50px 0 50px;
+  
+  @include responsive_mb {
+    padding: 50px 10px 0 10px;
+  }
+
+  h2 {
+    @include font(pxToRem(40), 800, $gray);
+    margin-bottom: 120px;
+    text-align: center;
+  }
+
+  .container {
+    margin-bottom: 160px;
+    width: 100%;
+
+    &:last-of-type {
+      margin-bottom: 120px;
+    }
+
+    > span {
+      display: block;
+      width: max-content;
+      margin: 0 auto;
+      margin-top: 40px;
+    }
+  }
+}
+
+.pastExecs {
+  max-width: pxToRem(918);
+  margin: 0 auto;
+  margin-bottom: 120px;
+
+  padding: 0 50px;
+  
+  @include responsive_mb {
+    padding: 0 10px;
+    margin-bottom: 60px;
+  }
+
+
+  h2 {
+    @include font(pxToRem(40), 800, $gray);
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  a {
+    border: 1px solid $green;
+    border-radius: 10px;
+    background-color: rgba($green, 0.1);
+    @include HSpaceBetweenFlex;
+    padding: 24px 32px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 40px;
+    }
+
+    span.txt {
+      @include font(pxToRem(24), 800, $gray);
+    }
+
+    span.arrow {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: $green;
+      @include CenterItemFlex;
+      transform: rotate(180deg);
+    }
+  }
+}
