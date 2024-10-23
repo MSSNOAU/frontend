@@ -11,4 +11,126 @@
   max-width: pxToRem(1240);
   margin-inline: auto;
   padding: pxToRem(32);
+  border: $m-green 1px solid;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &-central{
+    margin-inline: auto;
+    width: fit-content;
+    height: fit-content;
+    background-color: $m-green;
+    color: $white;
+    font-size: pxToRem(14);
+    padding-block: pxToRem(16);
+    padding-inline: pxToRem(30);
+    border-radius: 5px;
+  }
+
+  &-time_list{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(6,1fr);
+    column-gap: pxToRem(32);
+  }
+
+
+  &-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+
+    &-left{
+      display: flex;
+      flex-direction: column;
+      gap: pxToRem(4);
+      text-align: left;
+      justify-content: space-between;
+      h1{
+
+        font-size:  pxToRem(32);
+        font-weight: 800;
+        line-height:  pxToRem(40);
+        color: $m-green;
+
+      }
+  
+      h2{
+  
+        font-size:  pxToRem(18);
+        font-weight: 700;
+        line-height:  pxToRem(42);
+        color: $gray;
+      }
+    }
+    &-right{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: pxToRem(4);
+      text-align: right;
+
+      h1{
+
+        font-size:  pxToRem(18);
+        font-weight: 400;
+        line-height:  pxToRem(31);
+        color: $gray;
+
+      }
+  
+      h2{
+  
+        font-size:  pxToRem(18);
+        font-weight: 700;
+        line-height:  pxToRem(24);
+        color: $gray;
+      }
+    }
+  }
+
+  &-view_all_btn{
+    color: $m-green;
+    font-weight: 700;
+    font-size: pxToRem(14); 
+    line-height: pxToRem(18); 
+
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 4px;
+  }
+}
+
+
+.prayer-card{
+  background-color: #F2F2F2;
+  color: $gray;
+  border-radius: pxToRem(10);
+  padding-block: pxToRem(24);
+  padding-inline: pxToRem(32);
+  min-height: pxToRem(120);
+  display: flex;
+  flex-direction: column;
+  gap: pxToRem(16);
+
+
+  &_title{
+    font-weight: 800;
+    font-size: pxToRem(24);
+    line-height: pxToRem(30);
+    text-align: center;
+  }
+
+  &_sub-title{
+    font-weight: 700;
+    font-size: pxToRem(18);
+    line-height: pxToRem(24);
+    text-align: center;
+  }
 }

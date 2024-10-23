@@ -4,6 +4,8 @@ import PageHero from "../../page-hero/page-hero";
 import Spacer from "../../spacer/spacer";
 import MosquePrayerTimeCard from "../../mosque-prayer-time-card/mosque-prayer-time-card";
 
+
+
 const PrayerTimesPage = () => {
   return (
     <section className={classNames.page_wrapper}>
@@ -24,7 +26,7 @@ const PrayerTimesPage = () => {
           <MosquePrayerTimeCard />
           <MosquePrayerTimeCard />
           <MosquePrayerTimeCard />
-          <MosquePrayerTimeCard />
+          <MosquePrayerTimeCard  is_central/>
         </main>
       </section>
     </section>
