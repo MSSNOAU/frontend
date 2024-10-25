@@ -2,7 +2,7 @@
 @import "../../shared/styles/variables.modules.scss";
 
 .intro {
-  padding: 100px 0 60px;
+  padding: 100px 20px 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,6 +27,7 @@
 }
 
 .programs {
+  padding: 0 20px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

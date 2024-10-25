@@ -55,10 +55,7 @@ export default function ProgramsPage() {
       </div>
 
       <div className={styles.newsletterContainer}>
-        <Newsletter
-          header="Subscribe to An-Nur Press Blog"
-          transparent={false}
-        />
+        <Newsletter header="Subscribe to An-Nur Press Blog" />
       </div>
 
       <Footer />
