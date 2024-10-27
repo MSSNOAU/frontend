@@ -1,0 +1,79 @@
+@import "../../../shared/styles/shared.module.scss";
+@import "../../../shared/styles/variables.modules.scss";
+
+.container {
+  padding: 0 100px;
+}
+
+.imgContainer {
+  padding: 0 100px;
+  @include CenterItemFlex;
+  margin: auto;
+  margin-bottom: 100px;
+
+  @include responsive_mb {
+    padding: 0 15px;
+  }
+
+  img {
+    max-width: 1240px;
+  }
+}
+
+.programs {
+  display: grid;
+  gap: 32px;
+  margin: 60px auto 120px;
+  padding: 0 100px;
+  max-width: 1440px; // 1240 + 200px (horizontal paddings)
+
+  @include responsive_mb {
+    padding: 0 15px;
+  }
+}
+
+.program {
+  border: 1px solid #33333310;
+  border-radius: 10px;
+  padding: 32px;
+  display: grid;
+  gap: 24px;
+}
+
+.programHeading {
+  font-size: pxToRem(32);
+  font-weight: 800;
+  line-height: pxToRem(40);
+  color: $green;
+}
+
+.programSubheading {
+  font-size: pxToRem(18);
+  font-weight: 400;
+  line-height: pxToRem(31);
+}
+
+.eventsSection {
+  padding: 80px 100px;
+  background-color: $green-1;
+  display: grid;
+  justify-content: center;
+
+  @include responsive_mb {
+    padding: 80px 15px;
+  }
+}
+
+.events {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 60px;
+  column-gap: 42px;
+  max-width: 1240px;
+}
+
+.newsletterContainer {
+  margin: 120px 0;
+}

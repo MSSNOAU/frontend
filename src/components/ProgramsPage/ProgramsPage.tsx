@@ -4,6 +4,8 @@ import ProgramCard from "../UIUnits/Cards/ProgramCard/ProgramCard";
 import Newsletter from "../Newsletter/Newsletter";
 import Footer from "../Footer/Footer";
 import styles from "./ProgramsPage.module.scss";
+import TextWithSubtitle from "../UIUnits/TextWithSubtitle/TextWithSubtitle";
+import { useRouter } from "next/navigation";
 
 // prettier-ignore
 const RANDOM_PROGRAMS_DATA = [
@@ -24,23 +26,22 @@ const RANDOM_PROGRAMS_DATA = [
   { id: 14, imageUrl: "", title: "Dawah Nights", description: "Seeking Knowledge both Western and Islamic is compulsory upon every Muslim..." },
 ];
 
-export default function ProgramsPage() {
+function ProgramsPage() {
+  const router = useRouter();
+
   return (
     <>
       <div>
         <PageHeader title="Programs" />
 
-        <div className={styles.intro}>
-          <h2 className={styles.introTitle}>
-            Activities We Do For The Benefits Of The Muslim Students
-          </h2>
-          <p className={styles.introSubtitle}>
-            Explore our comprehensive range of programs, from regular and weekly
+        <TextWithSubtitle
+          title="Activities We Do For The Benefits Of The Muslim Students"
+          subtitle="Explore our comprehensive range of programs, from regular and weekly
             sessions to special events, designed to enrich your journey with
             MSSNOAU. At MSSNOAU, we foster a vibrant and inclusive community
-            where every member is encouraged to grow and excel.
-          </p>
-        </div>
+            where every member is encouraged to grow and excel."
+          marginTop={100}
+        />
 
         <ul className={styles.programs}>
           {RANDOM_PROGRAMS_DATA.map((program) => (
@@ -49,6 +50,7 @@ export default function ProgramsPage() {
               imageUrl=""
               title={program.title}
               description={program.description}
+              onBtnClick={() => router.push("/programs/academic-programs")} // mock
             />
           ))}
         </ul>
@@ -62,3 +64,5 @@ export default function ProgramsPage() {
     </>
   );
 }
+
+export default ProgramsPage;
