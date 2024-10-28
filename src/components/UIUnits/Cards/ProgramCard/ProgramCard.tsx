@@ -9,18 +9,14 @@ type Props = {
   imageUrl: string;
   title: string;
   description: string;
-}
+  onBtnClick?: Function;
+};
 
-const ProgramCard: React.FC<Props> = ({ imageUrl, title, description }) => {
+const ProgramCard: React.FC<Props> = ({ imageUrl, title, description, onBtnClick }) => {
   return (
     <li className={styles.programCard}>
       <div className={styles.image}>
-        <Image
-          src={AlUsrahImage}
-          alt="image"
-          fill
-          objectFit="cover"
-        />
+        <Image src={AlUsrahImage} alt="image" fill objectFit="cover" />
       </div>
       <div className={styles.b}>
         <h4>{title}</h4>
@@ -28,14 +24,16 @@ const ProgramCard: React.FC<Props> = ({ imageUrl, title, description }) => {
 
         <Button
           label="Learn More"
-          onClick={() => {}}
+          onClick={() => {
+            onBtnClick && onBtnClick();
+          }}
           variant="FILL_NONE_TEXT"
           iconPos="RIGHT"
           icon={<ArrowRightIcon height={16} />}
         />
       </div>
     </li>
-  )
-}
+  );
+};
 
 export default ProgramCard;

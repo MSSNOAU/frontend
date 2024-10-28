@@ -1,0 +1,32 @@
+@import "../../../shared/styles/shared.module.scss";
+@import "../../../shared/styles/variables.modules.scss";
+
+.intro {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+  padding: 0 100px;
+
+  @include responsive_mb {
+    padding: 0 15px;
+  }
+
+  .introTitle {
+    color: $gray; // #333333
+    font-size: pxToRem(40);
+    font-weight: 800;
+    line-height: pxToRem(50);
+    max-width: 793px;
+  }
+
+  .introSubtitle {
+    color: $gray; // #333333
+    font-size: pxToRem(18);
+    font-weight: 400;
+    line-height: pxToRem(41);
+    // max-width: 948px;
+  }
+}
