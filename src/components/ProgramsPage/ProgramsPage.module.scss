@@ -2,14 +2,20 @@
 @import "../../shared/styles/variables.modules.scss";
 
 .programs {
+  max-width: 1440px;
+  margin: auto;
   margin-top: 60px;
   padding: 0 20px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   row-gap: 60px;
-  column-gap: 43px;
-  padding-bottom: 120px;
+  column-gap: 42px;
+  padding: 0 100px 120px;
+
+  @include responsive_mb {
+    padding: 0 15px 120px;
+  }
 }
 
 .newsletterContainer {
