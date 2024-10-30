@@ -8,15 +8,18 @@ import Footer from "../../Footer/Footer";
 import NavHierarchy from "../../UIUnits/NavHierarchy/NavHeirarchy";
 import NewsCard from "../../UIUnits/Cards/NewsCard/NewsCard";
 import CardsSlider from "../../UIUnits/CardsSlider/CardsSlider";
+import WhatsAppLogo from "@/public/icons/svgs/whatsapp-colored.svg";
+import FacebookLogo from "@/public/icons/svgs/facebook-colored.svg";
+import XLogo from "@/public/icons/svgs/x-colored.svg";
 
 function getPressData(slug?: string) {
   return {
     id: 0,
     title: "TWILIGHT: A Night To Remember - MSSN OAU FYB Dinner and UNIFEMGA Induction",
     imageUrl: "/images/press/grad-muslims-and-induction.png",
-    author: "",
-    date: "",
-    readingTime: "",
+    author: "Aderibigbe Hikmah",
+    date: "August 12, 2024",
+    readingTime: 5,
     content: `The Muslim Students’ Society of Nigeria (MSSN), Obafemi Awolowo University (OAU) chapter, hosted a significant event to celebrate the achievements of its final year brethren who have successfully navigated the challenges of OAU. The grand dinner and induction ceremony took place at the OAU Central Mosque of Unity on the 11th of August, 2024.
 
                 The evening was decorated with joy and nostalgia as the fresh graduates gathered, beaming with accomplishment and their faces saying “Alhamdulillah, I survived OAU’s Shege”.
@@ -167,7 +170,40 @@ function PressDetailsPage() {
     <>
       <NavHierarchy rootPath="An-Nur Press" otherPaths={[data.title]} />
 
-      <div></div>
+      <div className={styles.header}>
+        <div className={styles.row_1}>
+          <div className={styles.tag}>
+            <p>News</p>
+          </div>
+
+          <div className={styles.socials}>
+            <p>Share via:</p>
+            <a href="#">
+              <WhatsAppLogo width={28} height={28} />
+            </a>
+            <a href="#">
+              <FacebookLogo width={28} height={28} />
+            </a>
+            <a href="#">
+              <XLogo width={28} height={28} />
+            </a>
+          </div>
+        </div>
+
+        <h1 className={styles.title}>{data.title}</h1>
+
+        <div className={styles.headerInfos}>
+          <div className={styles.author}>
+            <div className={styles.authorInitials}>
+              <p>AK</p>
+            </div>
+            <p>{data.author}</p>
+          </div>
+
+          <p className={styles.date}>{data.date}</p>
+          <p className={styles.readingTime}>Reading Time: {data.readingTime} mins read</p>
+        </div>
+      </div>
 
       <div className={styles.imgContainer}>
         <Image src={data.imageUrl} alt={data.title} width={1240} height={1113} layout="responsive" />
