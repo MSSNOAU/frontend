@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,6 +7,7 @@ import Newsletter from "../../Newsletter/Newsletter";
 import Footer from "../../Footer/Footer";
 import NavHierarchy from "../../UIUnits/NavHierarchy/NavHeirarchy";
 import NewsCard from "../../UIUnits/Cards/NewsCard/NewsCard";
+import CardsSlider from "../../UIUnits/CardsSlider/CardsSlider";
 
 function getPressData(slug?: string) {
   return {
@@ -49,25 +50,105 @@ function getPressData(slug?: string) {
 
     moreStories: [
       {
-        id: 3,
+        id: 1,
         imageUrl: "",
-        title: "TWILIGHT: A Night To Remember-MSSN OAU Dinner",
+        title: "1 TWILIGHT: A Night To Remember-MSSN OAU Dinner",
         content: "The evening was decorated with joy and nostalgia as the fresh graduates gathered...",
         author: "Ayodele Khadijat",
         readTime: 5,
       },
       {
-        id: 4,
+        id: 2,
         imageUrl: "",
-        title: "Update On The Orientation Week Organized For The Freshers",
+        title: "2 Update On The Orientation Week Organized For The Freshers",
         content: "The evening was decorated with joy and nostalgia as the fresh graduates gathered...",
         author: "Ni'mah Idera",
         readTime: 3,
       },
       {
+        id: 3,
+        imageUrl: "",
+        title: "3 Beautiful Scene From The Sisters' Hangout During Jihad Week",
+        content: "The evening was decorated with joy and nostalgia as the fresh graduates gathered...",
+        author: "Odunjo Azeez",
+        readTime: 4,
+      },
+      {
+        id: 4,
+        imageUrl: "",
+        title: "4 TWILIGHT: A Night To Remember-MSSN OAU Dinner",
+        content: "The evening was decorated with joy and nostalgia as the fresh graduates gathered...",
+        author: "Ayodele Khadijat",
+        readTime: 5,
+      },
+      {
         id: 5,
         imageUrl: "",
-        title: "Beautiful Scene From The Sisters' Hangout During Jihad Week",
+        title: "5 Update On The Orientation Week Organized For The Freshers",
+        content: "The evening was decorated with joy and nostalgia as the fresh graduates gathered...",
+        author: "Ni'mah Idera",
+        readTime: 3,
+      },
+      {
+        id: 6,
+        imageUrl: "",
+        title: "6 Beautiful Scene From The Sisters' Hangout During Jihad Week",
+        content: "The evening was decorated with joy and nostalgia as the fresh graduates gathered...",
+        author: "Odunjo Azeez",
+        readTime: 4,
+      },
+      {
+        id: 7,
+        imageUrl: "",
+        title: "7 TWILIGHT: A Night To Remember-MSSN OAU Dinner",
+        content: "The evening was decorated with joy and nostalgia as the fresh graduates gathered...",
+        author: "Ayodele Khadijat",
+        readTime: 5,
+      },
+      {
+        id: 8,
+        imageUrl: "",
+        title: "8 Update On The Orientation Week Organized For The Freshers",
+        content: "The evening was decorated with joy and nostalgia as the fresh graduates gathered...",
+        author: "Ni'mah Idera",
+        readTime: 3,
+      },
+      {
+        id: 9,
+        imageUrl: "",
+        title: "9 Beautiful Scene From The Sisters' Hangout During Jihad Week",
+        content: "The evening was decorated with joy and nostalgia as the fresh graduates gathered...",
+        author: "Odunjo Azeez",
+        readTime: 4,
+      },
+      {
+        id: 10,
+        imageUrl: "",
+        title: "10 TWILIGHT: A Night To Remember-MSSN OAU Dinner",
+        content: "The evening was decorated with joy and nostalgia as the fresh graduates gathered...",
+        author: "Ayodele Khadijat",
+        readTime: 5,
+      },
+      {
+        id: 11,
+        imageUrl: "",
+        title: "11 Update On The Orientation Week Organized For The Freshers",
+        content: "The evening was decorated with joy and nostalgia as the fresh graduates gathered...",
+        author: "Ni'mah Idera",
+        readTime: 3,
+      },
+      {
+        id: 12,
+        imageUrl: "",
+        title: "12 Beautiful Scene From The Sisters' Hangout During Jihad Week",
+        content: "The evening was decorated with joy and nostalgia as the fresh graduates gathered...",
+        author: "Odunjo Azeez",
+        readTime: 4,
+      },
+      {
+        id: 13,
+        imageUrl: "",
+        title: "13 Beautiful Scene From The Sisters' Hangout During Jihad Week",
         content: "The evening was decorated with joy and nostalgia as the fresh graduates gathered...",
         author: "Odunjo Azeez",
         readTime: 4,
@@ -78,6 +159,7 @@ function getPressData(slug?: string) {
 
 function PressDetailsPage() {
   const router = useRouter();
+  const [currentSlide, setCurrentSlide] = useState<number>(0); // for More Stories
 
   const data = getPressData();
 
@@ -124,7 +206,7 @@ function PressDetailsPage() {
       <div className={styles.moreStories}>
         <h2 className={styles.heading_moreStories}>More Stories</h2>
         <div className={styles.moreStoriesCards}>
-          {data.moreStories.map((news) => (
+          {data.moreStories.slice(currentSlide * 3, currentSlide * 3 + 3).map((news) => (
             <NewsCard
               key={news.id}
               imageUrl={news.imageUrl}
@@ -138,6 +220,12 @@ function PressDetailsPage() {
             />
           ))}
         </div>
+        <CardsSlider
+          totalNoOfCards={data.moreStories.length}
+          cardsToDisplay={3}
+          currentSlide={currentSlide}
+          setCurrentSlide={setCurrentSlide}
+        />
       </div>
 
       <div className={styles.newsletterContainer}>

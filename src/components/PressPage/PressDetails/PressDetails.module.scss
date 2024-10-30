@@ -9,6 +9,7 @@
   margin: auto;
   margin-bottom: 80px;
   padding: 0 100px;
+  max-width: 1440px;
 
   @include responsive_mb {
     padding: 0 15px;
@@ -95,9 +96,21 @@
   }
 }
 
+@keyframes slideInRight {
+  0% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+}
+
 .moreStoriesCards {
   display: flex;
   flex-wrap: wrap;
   gap: 42px;
   justify-content: center;
+  margin-bottom: 40px;
+
+  & > li {
+    animation: slideInRight 0.3s;
+  }
 }
