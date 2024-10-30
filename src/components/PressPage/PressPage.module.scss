@@ -1,3 +1,5 @@
+@import "../../shared/styles/shared.module.scss";
+
 .newsSection {
   padding: 0 100px;
   max-width: 1440px;
@@ -5,12 +7,16 @@
   display: grid;
   justify-items: center;
   gap: 40px;
+
+  @include responsive_mb {
+    padding: 0 15px;
+  }
 }
 
 .news {
   display: flex;
   flex-wrap: wrap;
-  justify-items: center;
+  justify-content: center;
   row-gap: 60px;
   column-gap: 42px;
 }
