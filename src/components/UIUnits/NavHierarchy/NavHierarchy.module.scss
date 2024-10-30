@@ -20,6 +20,11 @@
   line-height: pxToRem(36);
   color: $gray;
   opacity: 0.5;
+
+  @include responsive_mb {
+    font-size: pxToRem(14);
+    line-height: pxToRem(21);
+  }
 }
 
 .rootPath {

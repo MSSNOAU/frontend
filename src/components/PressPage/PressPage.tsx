@@ -1,11 +1,12 @@
-import REact from "react";
-import styles from "./PressPage.module.scss";
+import React from "react";
+import { useRouter } from "next/navigation";
 import PageHeader from "../UIUnits/PageHeader/PageHeader";
 import Footer from "../Footer/Footer";
 import TextWithSubtitle from "../UIUnits/TextWithSubtitle/TextWithSubtitle";
 import NewsCard from "../UIUnits/Cards/NewsCard/NewsCard";
 import Newsletter from "../Newsletter/Newsletter";
 import Button from "../UIUnits/Button/Button";
+import styles from "./PressPage.module.scss";
 
 const MOCK_NEWS_DATA = [
   {
@@ -35,6 +36,8 @@ const MOCK_NEWS_DATA = [
 ];
 
 function PressPage() {
+  const router = useRouter();
+
   return (
     <>
       <PageHeader title="An-Nur Press" />
@@ -55,6 +58,9 @@ function PressPage() {
                 content={news.content}
                 author={news.author}
                 readTime={news.readTime}
+                onBtnClick={() => {
+                  router.push("/press/twilight-a-night-to-remember");
+                }}
               />
             ))
           )}

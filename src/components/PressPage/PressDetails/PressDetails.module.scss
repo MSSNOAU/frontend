@@ -1,0 +1,103 @@
+@import "../../../shared/styles/shared.module.scss";
+@import "../../../shared/styles/variables.modules.scss";
+
+.newsletterContainer {
+  margin-bottom: 120px;
+}
+
+.imgContainer {
+  margin: auto;
+  margin-bottom: 80px;
+  padding: 0 100px;
+
+  @include responsive_mb {
+    padding: 0 15px;
+  }
+}
+
+.wrapper {
+  max-width: 1440px;
+  padding: 0 100px;
+  margin: 0 auto 120px;
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  gap: 56px;
+
+  @media screen and (max-width: 62.5em) {
+    // 1000px
+    grid-template-columns: auto;
+  }
+
+  @include responsive_mb {
+    padding: 0 15px;
+  }
+}
+
+.details {
+  display: grid;
+  gap: 32px;
+
+  p {
+    color: $gray;
+    font-size: pxToRem(18);
+    font-weight: 400;
+    line-height: pxToRem(40);
+    word-spacing: pxToRem(2.7); // wrong?
+  }
+
+  strong {
+    line-height: pxToRem(24);
+    font-weight: 700;
+    color: $black;
+
+    a {
+      color: $green;
+    }
+  }
+}
+
+.topStories {
+  display: grid;
+  gap: 32px;
+  align-content: flex-start;
+}
+
+.heading_topStories,
+.heading_moreStories {
+  color: $gray;
+  font-size: pxToTem(32);
+  font-weight: 800;
+  line-height: pxToRem(40);
+}
+
+.topStoriesCards {
+  display: grid;
+  gap: 32px;
+
+  @media screen and (max-width: 62.5em) {
+    // 1000px
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.moreStories {
+  display: grid;
+  gap: 32px;
+  max-width: 1440px;
+  padding: 0 100px;
+  margin: auto;
+  margin-bottom: 120px;
+
+  @include responsive_mb {
+    padding: 0 15px;
+  }
+}
+
+.moreStoriesCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 42px;
+  justify-content: center;
+}
