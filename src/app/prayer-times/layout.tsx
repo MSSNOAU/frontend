@@ -1,6 +1,6 @@
 import Footer from '@/src/components/Footer/Footer';
 import NavBar from '@/src/components/NavBar/NavBar';
-import Spacer from '@/src/components/spacer/spacer';
+import Spacer from '@/src/components/UIUnits/spacer/spacer';
 import React from 'react'
 import classNames from "./layout.module.scss";
 
