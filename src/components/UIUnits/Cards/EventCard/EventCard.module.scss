@@ -1,0 +1,47 @@
+@import "../../../../shared/styles/variables.modules.scss";
+@import "../../../../shared/styles/shared.module.scss";
+
+.eventCard {
+  width: 385px;
+  border: 1px solid rgba($gray, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.content {
+  display: grid;
+  padding: 16px 16px 20px;
+
+  button {
+    justify-self: center;
+  }
+}
+
+.title {
+  font-size: pxToRem(20);
+  font-weight: 800;
+  line-height: pxToRem(30);
+  margin-bottom: 12px;
+}
+
+.detailsList {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 16px;
+  list-style: circle;
+}
+
+.detail p {
+  font-size: pxToRem(14);
+  font-weight: 400;
+  line-height: pxToRem(18);
+  color: $gray;
+}
+
+.date {
+  font-size: pxToRem(12);
+  font-weight: 400;
+  line-height: pxToRem(16);
+  color: rgba($gray, 0.5);
+  margin-bottom: 24px;
+}

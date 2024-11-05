@@ -1,0 +1,77 @@
+@import "../../../shared/styles/shared.module.scss";
+@import "../../../shared/styles/variables.modules.scss";
+
+.group {
+  border: 1px solid $green-3;
+  padding: 72px 20px 24px 20px;
+  position: relative;
+  
+
+  .title {
+    background-color: $gray;
+    padding: 20px 54px;
+    width: max-content;
+    max-width: 95%;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+
+    @include responsive_mb {
+      padding: 10px 30px
+    }
+
+    h3 {
+      text-overflow: ellipsis;
+      text-wrap: nowrap;
+      overflow: hidden;
+      @include font(pxToRem(32), 800, $white);
+
+      @include responsive_mb {
+        font-size: pxToRem(16);
+      }
+    }
+  }
+
+  .tContainer {
+    overflow-x: scroll;
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    text-align: left;
+    padding: 0 20px;
+    height: pxToRem(100);
+    text-wrap: nowrap;
+    width: max-content;
+  }
+  
+  td {
+    border: 1px solid rgba($green, 0.4);
+    @include font(pxToRem(14), 700, $gray);
+  }
+  
+  th {
+    border: 1px solid $white;
+    @include font(pxToRem(16), 700, $white);
+  }
+  
+  tr {
+    &:nth-child(odd) {
+      background-color: $green-2;
+    }
+    
+    &.header {
+      background-color: $green;
+    }
+
+    // &:not(.header) {
+    //   border-color: $green;
+    // }
+  }
+}

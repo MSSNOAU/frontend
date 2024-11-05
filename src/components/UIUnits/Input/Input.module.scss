@@ -2,7 +2,8 @@
 @import "../../../shared/styles/variables.modules.scss";
 
 .input,
-.dropDown {
+.dropDown,
+.textarea {
   display: flex;
   flex-direction: column;
 
@@ -23,6 +24,21 @@
 
     ::placeholder {
       @include font(pxToRem(18), 400, $gray);
+    }
+  }
+}
+
+.textarea {
+  textarea {
+    padding: 24px;
+    // height: pxToRem(60);
+    border: none;
+    height: pxToRem(150);
+    border-radius: 5px;
+
+    ::placeholder {
+      @include font(pxToRem(18), 400, $gray);
+      margin-top: 10px;
     }
   }
 }
