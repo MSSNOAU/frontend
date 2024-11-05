@@ -11,18 +11,14 @@ type Props = {
   content: string;
   author: string;
   readTime: number;
-}
+  onBtnClick?: Function;
+};
 
-const NewsCard: React.FC<Props> = ({ imageUrl, title, content, author, readTime }) => {
+const NewsCard: React.FC<Props> = ({ imageUrl, title, content, author, readTime, onBtnClick }) => {
   return (
     <li className={styles.newsCard}>
       <div className={styles.image}>
-        <Image
-          src={AlUsrahImage}
-          alt="image"
-          fill
-          objectFit="cover"
-        />
+        <Image src={AlUsrahImage} alt="image" fill objectFit="cover" />
         <span className={styles.tag}>
           <p>Upcoming Event</p>
         </span>
@@ -33,7 +29,13 @@ const NewsCard: React.FC<Props> = ({ imageUrl, title, content, author, readTime 
 
         <div className={styles.cta}>
           <div className={styles.author}>
-            <span className={styles.userIcon}>{author.split(" ").slice(0, 2).map(a => a[0]).join("")}</span>
+            <span className={styles.userIcon}>
+              {author
+                .split(" ")
+                .slice(0, 2)
+                .map((a) => a[0])
+                .join("")}
+            </span>
             <div>
               <p className={styles.name}>{author}</p>
               <p className={styles.readTime}>{readTime} min read</p>
@@ -41,7 +43,9 @@ const NewsCard: React.FC<Props> = ({ imageUrl, title, content, author, readTime 
           </div>
           <Button
             label="Read More"
-            onClick={() => {}}
+            onClick={() => {
+              onBtnClick && onBtnClick();
+            }}
             variant="FILL_NONE_TEXT"
             iconPos="RIGHT"
             icon={<ArrowRightIcon height={16} />}
@@ -49,7 +53,7 @@ const NewsCard: React.FC<Props> = ({ imageUrl, title, content, author, readTime 
         </div>
       </div>
     </li>
-  )
-}
+  );
+};
 
 export default NewsCard;

@@ -11,6 +11,7 @@
 
   @include responsive_mb {
     padding: 40px 15px 60px;
+    padding-bottom: 30px;
   }
 }
 
@@ -20,6 +21,11 @@
   line-height: pxToRem(36);
   color: $gray;
   opacity: 0.5;
+
+  @include responsive_mb {
+    font-size: pxToRem(14);
+    line-height: pxToRem(21);
+  }
 }
 
 .rootPath {
