@@ -12,7 +12,6 @@ $containerHPadding: 20px;
   h2 {
     @include font(pxToRem(40), 800, $black);
     margin-bottom: 20px;
-    border: 1px solid red;
 
     @include responsive_mb{
       @include font(pxToRem(30), 800, $black);
