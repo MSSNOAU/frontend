@@ -22,7 +22,7 @@ const EventCard: React.FC<Props> = ({ id, imageUrl, title, details, date }) => {
         <h4 className={styles.title}>{title}</h4>
         <ul className={styles.detailsList}>
           {details.map((d) => (
-            <li className={styles.detail}>
+            <li key={d} className={styles.detail}>
               <p>{d}</p>
             </li>
           ))}

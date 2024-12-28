@@ -84,7 +84,7 @@ export default function ProgramDetails({ slug }: Props) {
 
         <div className={styles.events}>
           {programData.events.map((p) => (
-            <EventCard id={p.id} imageUrl="" title={p.title} details={p.details} date={p.date} />
+            <EventCard key={p.id} id={p.id} imageUrl="" title={p.title} details={p.details} date={p.date} />
           ))}
         </div>
       </section>

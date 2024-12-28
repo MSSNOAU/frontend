@@ -178,7 +178,7 @@ const HomePage = () => {
             </ul>
 
             <Link href={"/prayer-times"}>
-              <Button label="See More"  />
+              <Button onClick={() => {}} label="See More"  />
             </Link>
           </div>
         </div>

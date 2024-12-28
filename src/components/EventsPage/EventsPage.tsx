@@ -128,12 +128,15 @@ const EventsPage = () => {
             .map((event, index) => (
               <EventCard
                 key={index}
-                tag={event.tag}
+                details={[]}
+                imageUrl={event.imageUrl}
+                id={event.title}
+                // tag={event.tag}
                 title={event.title}
-                speaker1={event.speaker1}
-                speaker2={event.speaker2}
+                // speaker1={event.speaker1}
+                // speaker2={event.speaker2}
                 date={event.date}
-                link={event.link}
+                // link={event.link}
               />
             ))}
         </div>
