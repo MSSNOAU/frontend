@@ -8,9 +8,10 @@ type CProps = {
   title?: string;
   header?: string;
   transparent?: boolean;
+  fullWidth?:boolean;
 }
 
-const Newsletter: React.FC<CProps> = ({ title, header, transparent }) => {
+const Newsletter: React.FC<CProps> = ({ title, header, transparent,...otherProps }) => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const subscribeHandler = () => {
@@ -22,6 +23,7 @@ const Newsletter: React.FC<CProps> = ({ title, header, transparent }) => {
       className={clsx({
         [styles.newsletter]: true,
         [styles.noBg]: transparent,
+        [styles.fw]: otherProps?.fullWidth,
       })}
     >
       {title && <h2>{title}</h2>}
