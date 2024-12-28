@@ -17,6 +17,10 @@
     padding: 0 10px;
   }
 
+  &.rounded {
+    border-radius: 200px;
+  }
+
   &.sm {
     // height: pxToRem(39);
     // padding: 0 30px;
@@ -32,17 +36,17 @@
     cursor: default;
     opacity: 0.4;
   }
-  
+
   &.button_FILL_WHITE {
     background-color: $white;
     color: $green;
   }
-  
+
   &.button_FILL_YELLOW {
     background-color: $yellow;
     color: $gray;
   }
-  
+
   &.button_FILL_NONE_TEXT {
     background-color: transparent;
     padding: 0 0;
@@ -50,14 +54,15 @@
     height: fit-content;
   }
 
-  .iconL, .iconR {
+  .iconL,
+  .iconR {
     display: flex;
     @include CenterItemFlex;
   }
   .iconL {
     margin-right: 5px;
   }
-  
+
   .iconR {
     margin-left: 5px;
   }

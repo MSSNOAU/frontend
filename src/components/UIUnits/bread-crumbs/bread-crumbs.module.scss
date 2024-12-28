@@ -1,0 +1,38 @@
+@import "../../../shared/styles/utilities.module";
+@import "../../../shared/styles/shared.module";
+@import "../../../shared/styles/variables.modules";
+
+
+.bread-crumbs{
+  display: flex;
+
+  ol{
+    display: flex;
+    align-items: center;
+    gap: pxToRem(12);
+    a{
+      font-weight: normal;
+      font-size: pxToRem(18);
+      line-height: pxToRem(36);
+      text-align: center;
+      color: $m-green;
+    }
+  }
+}
+
+.bread-crumb{
+  display: flex;
+  align-items: center;
+  gap: pxToRem(12);
+  .page-link{
+    font-weight: normal;
+    font-size: pxToRem(18);
+    line-height: pxToRem(36);
+    text-align: center;
+    color: $m-green;
+    margin-right: pxToRem(6);
+    &.current-page{
+      color: $black-50;
+    }
+  }
+}

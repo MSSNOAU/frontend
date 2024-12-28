@@ -1,0 +1,63 @@
+@import "../../../shared/styles/shared.module.scss";
+@import "../../../shared/styles/variables.modules.scss";
+
+.slider {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.sliderIndicator {
+  display: flex;
+  gap: 10px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 90px;
+  background-color: $green;
+  opacity: 0.25;
+  transition: all 0.2s ease-out;
+
+  &__active {
+    width: 32px;
+    opacity: 1;
+  }
+}
+
+.sliderControls {
+  position: absolute;
+  right: 0;
+  display: flex;
+  gap: 32px;
+}
+
+.sliderBtn {
+  @include CenterItemFlex;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: $gray;
+  border: 1px solid $gray;
+
+  svg {
+    path {
+      stroke: #fff;
+    }
+  }
+
+  &:disabled {
+    border-color: #c4c4c4;
+    background-color: transparent;
+    cursor: not-allowed;
+
+    svg {
+      path {
+        stroke: #c4c4c4;
+      }
+    }
+  }
+}

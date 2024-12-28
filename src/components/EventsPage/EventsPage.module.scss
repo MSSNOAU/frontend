@@ -1,0 +1,136 @@
+@import "../../shared/styles/shared.module.scss";
+@import "../../shared/styles/variables.modules.scss";
+
+$containerHPadding: 20px;
+
+.eventsIntro {
+  max-width: pxToRem(1240);
+  padding: 0 $containerHPadding;
+  margin: 50px auto;
+  text-align: center;
+
+  h2 {
+    @include font(pxToRem(40), 800, $black);
+    margin-bottom: 20px;
+
+    @include responsive_mb{
+      @include font(pxToRem(30), 800, $black);
+    }
+  }
+  p {
+    font-family: "Sora", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    @include font(pxToRem(18), 300, $black);
+    @include responsive_mb{
+      @include font(pxToRem(14), 300, $black);
+    }
+  }
+}
+
+.eventTypeButtons {
+  font-family: "Mulish", sans-serif;
+  background: #daecda;
+  width: 90%;
+  max-width: 450px;
+  padding: 10px;
+  border-radius: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    width: 50%;
+    padding: 20px 15px;
+    border-radius: 500px;
+    border: none;
+    background: none;
+    @include font(pxToRem(16), 600, $black);
+
+    @include responsive_mb{
+      @include font(pxToRem(12), 600, $black);
+    }
+    cursor: pointer;
+    font-weight: 600;
+    color: $black;
+    transition: color 0.3s;
+
+    &.active {
+      background: $green;
+      @include font(pxToRem(16), 600, $white);
+      @include responsive_mb{
+        @include font(pxToRem(12), 600, $black);
+      }
+      padding: 10px 15px;
+    }
+  }
+}
+
+.eventsContainer {
+  max-width: pxToRem(1240);
+  padding: 0 $containerHPadding;
+  margin: 50px auto;
+
+
+
+  .events {
+    @include CenterItemFlex;
+    column-gap: 20px;
+    row-gap: 60px;
+    flex-wrap: wrap;
+  }
+}
+
+.newsletterContainer {
+  padding-block: 47px;
+  margin: 50px auto;
+
+  .container {
+    background-image: url("../../../public/images/donate/texture.png");
+    background-color: $green;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+    gap: 20px;
+    padding: 50px;
+    @include responsive_mb{
+      padding-inline: 20px;
+    }
+
+    .newsletterText {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: $white;
+      gap: 20px;
+      h2 {
+        @include font(pxToRem(40), 800, $white);
+      }
+      p {
+        font-family: "Sora", sans-serif;
+        max-width: 900px;
+        margin: 0 auto;
+        @include font(pxToRem(18), 300, $white);
+      }
+    }
+
+
+    .newsletterForm{
+      font-family: "Mulish", sans-serif !important;
+      width: 100%;
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+      padding: 0 40px ;
+      flex-wrap: wrap;
+
+      @include responsive_mb {
+        padding: 0;
+      }
+    }
+  }
+}

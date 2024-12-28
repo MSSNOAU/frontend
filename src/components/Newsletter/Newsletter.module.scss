@@ -16,6 +16,12 @@
     background: transparent;
   }
 
+  &.fw{
+    width: 100%;
+    max-width:none;
+    margin: auto
+  }
+
   h3 {
     @include font(pxToRem(40), 800, $white);
     margin-top: 12px;
